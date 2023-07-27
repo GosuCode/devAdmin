@@ -1,4 +1,4 @@
-import prism from "../../assets/prism.png";
+import prism from "../assets/prism.png";
 import {
   Chart as ChartJS,
   ChartConfiguration,
@@ -12,7 +12,8 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 import faker from "faker";
-import Users from "../Users";
+import Users from "./Users";
+import CalendarAdmin from "../components/Calendar/CalendarAdmin";
 
 ChartJS.register(
   CategoryScale,
@@ -106,7 +107,9 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          <div>{/* <Users /> */}</div>
+          <div>
+            <CalendarAdmin />
+          </div>
         </div>
       </div>
     </div>

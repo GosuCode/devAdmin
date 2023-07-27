@@ -23,7 +23,7 @@ const Sidebar = () => {
           <div key={key} className="mt-8">
             <Link
               to={val.path}
-              className="group flex mt-5 lg:w-60 h-10 border-2 md:hover:border-cyan-100 rounded-md active:bg-gray-800"
+              className="group flex mt-5 lg:w-11/12 h-10 border-2 md:hover:border-cyan-100 rounded-md active:bg-gray-800"
             >
               <div
                 className={`grid items-center px-2 text-2xl rounded-md shadow-md shadow-cyan-200

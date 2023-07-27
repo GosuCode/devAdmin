@@ -5,7 +5,6 @@ import react from "../assets/react.svg";
 interface User {
   id: number;
   username: string;
-  profileImageUrl: string;
 }
 
 const Users: React.FC = () => {
@@ -27,20 +26,16 @@ const Users: React.FC = () => {
 
   return (
     <div>
-      {users.length === 0 ? (
-        <div>Loading...</div>
-      ) : (
-        users.map((user) => (
-          <div key={user.id}>
-            <div>
-              <img src={react} alt="user profile" />
-            </div>
-            <div>
-              <span>{user.username}</span>
-            </div>
+      {users.map((user) => (
+        <div key={user.id}>
+          <div>
+            <img src={react} alt="user profile" />
           </div>
-        ))
-      )}
+          <div>
+            <span>{user.username}</span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

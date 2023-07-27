@@ -9,13 +9,13 @@ interface Blog {
   image: string;
 }
 const Posts: React.FC = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [search, setSearch] = useState("");
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [search, setSearch] = useState<string[]>("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/posts");
+        const response = await axios.get<Blog[]>("http://localhost:3001/posts");
         // await new Promise((resolve) => setTimeout(resolve, 1000));
         setBlogs(response.data);
       } catch (error) {
@@ -49,7 +49,7 @@ const Posts: React.FC = () => {
                 <div key={i}>
                   <div className="w-full overflow-clip grid grid-cols-6 mb-6 text-white border-2 border-cyan-200 rounded-md">
                     <div
-                      className="h-full w-full col-span-2 rounded-md bg-lime-500 cursor-pointer"
+                      className="h-full w-full col-span-2 rounded-md bg-cyan-200 cursor-pointer"
                       style={{
                         backgroundImage: `url('http://localhost:3001/${val.image}')`,
                         backgroundSize: "cover",
